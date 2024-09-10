@@ -1,0 +1,312 @@
+import Spinner from "../components/Spinner";
+import { Link } from "react-router-dom";
+import { ERoutes } from "../types/links";
+import { FaBackward } from "react-icons/fa";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
+export default function ExploreMartens() {
+  const isLoading = false;
+  if (isLoading) {
+    return <Spinner />;
+  }
+  return (
+    <section className="martens">
+      <Link to={ERoutes.home}>
+        <FaBackward size={40} fill="#ffa500" />
+      </Link>
+      <div className="grid__wrapper">
+        <div>
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://images.unsplash.com/photo-1541368036253-3baf27ba5343?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+        </div>
+        <div>
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://cdn.pixabay.com/photo/2016/07/05/16/37/boots-1498939_960_720.jpg"
+            alt=""
+          />
+        </div>
+        <div className="tall">
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://cdn.pixabay.com/photo/2017/04/29/14/27/boots-2270860_960_720.jpg"
+            alt=""
+          />
+        </div>
+        <div className="wide">
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://images.unsplash.com/photo-1517260324747-755590906c70?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+        </div>
+        <div>
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://cdn.pixabay.com/photo/2017/10/03/20/03/boots-2813917_960_720.jpg"
+            alt=""
+          />
+        </div>
+        <div className="tall">
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://images.unsplash.com/photo-1711925843332-848856cd7f5b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDg4fHxkciUyMG1hcnRlbnMlMjBib290c3xlbnwwfHwwfHx8MA%3D%3D"
+            alt=""
+          />
+        </div>
+        <div className="big">
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://images.unsplash.com/photo-1472212475008-54945bdab411?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+        </div>
+        <div>
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://farm9.static.flickr.com/8198/8275405719_3f81b287ba_c.jpg"
+            alt=""
+          />
+        </div>
+        <div className="wide">
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://images.unsplash.com/photo-1607075568497-2980a2917fea?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+        </div>
+        <div className="big">
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://cdn.pixabay.com/photo/2024/01/27/21/12/boots-8536750_960_720.jpg"
+            alt=""
+          />
+        </div>
+        <div className="tall">
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://images.unsplash.com/photo-1546869372-abdd57773019?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzEyfHxkciUyMG1hcnRlbnMlMjBib290c3xlbnwwfHwwfHx8MA%3D%3D"
+            alt=""
+          />
+        </div>
+        <div>
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://farm9.static.flickr.com/8353/8276462608_6170a094e6_c.jpg"
+            alt=""
+          />
+        </div>
+        <div>
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://farm2.static.flickr.com/1443/24061884104_dc1f745bb6_c.jpg"
+            alt=""
+          />
+        </div>
+        <div>
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://images.unsplash.com/photo-1626781321457-44db0f51fbfe?q=80&w=1923&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+        </div>
+        <div>
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://farm4.static.flickr.com/3304/3658407164_9e128ed9cc_c.jpg"
+            alt=""
+          />
+        </div>
+        <div className="wide">
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://farm8.static.flickr.com/7335/11853478926_a3080ef651_c.jpg"
+            alt=""
+          />
+        </div>
+        <div>
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://cdn.pixabay.com/photo/2018/11/30/02/11/winter-boots-3846915_960_720.jpg"
+            alt=""
+          />
+        </div>
+        <div>
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://farm4.static.flickr.com/3148/2639752964_c26ff75224_c.jpg"
+            alt=""
+          />
+        </div>
+        <div className="wide">
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://images.unsplash.com/photo-1521235259873-8555dd0e5e88?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+        </div>
+        <div>
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://images.unsplash.com/photo-1605269196338-29bff6fc8c22?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+        </div>
+        <div className="wide">
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://cdn.pixabay.com/photo/2018/11/30/01/03/winter-boots-3846863_960_720.jpg"
+            alt=""
+          />
+        </div>
+        <div className="big">
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://cdn.pixabay.com/photo/2023/10/02/15/31/ai-generated-8289393_960_720.jpg"
+            alt=""
+          />
+        </div>
+        <div>
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://cdn.pixabay.com/photo/2020/02/29/17/22/shoes-4890686_960_720.jpg"
+            alt=""
+          />
+        </div>
+        <div>
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://farm9.static.flickr.com/8117/8983462658_5a3120b610_c.jpg"
+            alt=""
+          />
+        </div>
+        <div className="big">
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://farm4.static.flickr.com/3235/3942165289_4f929452ee_c.jpg"
+            alt=""
+          />
+        </div>
+        <div className="tall">
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://images.unsplash.com/photo-1520640113944-7ddf59240b14?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjI2fHxkciUyMG1hcnRlbnMlMjBib290c3xlbnwwfHwwfHx8MA%3D%3D"
+            alt=""
+          />
+        </div>
+        <div>
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://cdn.pixabay.com/photo/2013/11/22/03/35/boots-215486_960_720.jpg"
+            alt=""
+          />
+        </div>
+        <div>
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://cdn.pixabay.com/photo/2018/12/10/21/33/winter-boots-3867775_960_720.jpg"
+            alt=""
+          />
+        </div>
+        <div className="wide">
+          <LazyLoadImage
+            width={"100%"}
+            height={"100%"}
+            effect="blur"
+            className="grid__img"
+            src="https://cdn.pixabay.com/photo/2020/08/24/21/40/fashion-5515135_960_720.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,207 @@
+@use "../variables" as *;
+@use "../mixins";
+
+// grunge brush transparent
+
+.home {
+  margin: 0 auto;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 6rem 0 2rem 0;
+
+  @include mixins.breakpoint-up(medium) {
+    height: 100%;
+  }
+
+  &__background-img {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    -webkit-mask-image: url("../assets/brush.png");
+    mask-image: url("../assets/brush.png");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: 150vh;
+    mask-size: 150vh;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+
+    @include mixins.breakpoint-up(medium) {
+      top: 47%;
+      -webkit-mask-position: top;
+      mask-position: top;
+      -webkit-mask-size: 170vh;
+      mask-size: 170vh;
+    }
+  }
+
+  &__container {
+    padding: 1rem 0;
+
+    .home__boot {
+      margin: 0 auto;
+      max-width: 75rem;
+      padding: 1rem 1rem 2rem 1rem;
+      display: grid;
+      gap: 1rem;
+
+      // grid-row-start + grid-column-start + grid-row-end + grid-column-end:
+      @include mixins.breakpoint-up(medium) {
+        align-items: center;
+        justify-items: center;
+      }
+
+      .home__data {
+        padding: 0 1rem;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-transform: capitalize;
+        color: $darkClr-medium;
+
+        & h1 {
+          font-weight: 900;
+          line-height: 120%;
+          background: linear-gradient(170deg, #fac002 35.16%, #2d03fd 97.86%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+        }
+
+        .home__new {
+          display: block;
+          font-weight: 700;
+          color: $whiteClr;
+          text-shadow: 1px 1px 2px black;
+          margin: 0;
+        }
+
+        .home__description {
+          margin: 1rem 0;
+          font-weight: 700;
+          line-height: 150%;
+          color: $whiteClr;
+          text-shadow: 1px 1px 2px black;
+          margin-top: 0;
+        }
+
+        button {
+          margin-left: -1rem;
+        }
+
+        @include mixins.breakpoint-up(medium) {
+          text-align: center;
+
+          button {
+            margin-right: 40%;
+          }
+        }
+      }
+
+      .cube__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0;
+
+        .cube__grid {
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(3, 1fr);
+          transform: rotate(45deg);
+          padding: 1rem;
+
+          .little__cube {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(white, 0.15);
+            border: 2px solid $lightClr;
+            transform: rotate(-45deg);
+            color: transparent;
+            box-shadow: $shadowTwo;
+            box-shadow: rgb(22, 33, 45) 0px 20px 30px -10px;
+            border-radius: 2px;
+            overflow: hidden;
+            filter: drop-shadow(
+              rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+              rgba(0, 0, 0, 0.3) 0px 3px 7px -3px
+            );
+
+            &:nth-child(odd) {
+              width: 90px;
+              height: 110px;
+            }
+
+            &:nth-child(even) {
+              width: 90px;
+              height: 90px;
+            }
+
+            & img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+
+            &:nth-child(2) {
+              width: 90px;
+              height: 130px;
+            }
+
+            @include mixins.breakpoint-up(medium) {
+              &:nth-child(odd) {
+                width: 130px;
+                height: 160px;
+              }
+
+              &:nth-child(even) {
+                width: 150px;
+                height: 160px;
+              }
+
+              &:nth-child(2) {
+                width: 130px;
+                height: 200px;
+              }
+            }
+
+            @include mixins.breakpoint-up(large) {
+              &:nth-child(odd) {
+                width: 140px;
+                height: 170px;
+              }
+
+              &:nth-child(even) {
+                width: 160px;
+                height: 170px;
+              }
+
+              &:nth-child(2) {
+                width: 140px;
+                height: 210px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

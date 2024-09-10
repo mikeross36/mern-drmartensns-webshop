@@ -1,0 +1,141 @@
+@use "../variables" as *;
+@use "../mixins";
+
+.our__team {
+  height: 100vh;
+  width: 100%;
+  padding: 8rem 0;
+  position: relative;
+  z-index: 10;
+
+  @include mixins.breakpoint-up(medium) {
+    height: 40vh;
+  }
+
+  @include mixins.breakpoint-up(xlarge) {
+    height: 20vh;
+  }
+
+  .items__wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 0;
+  }
+
+  .page__title {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0 1rem;
+
+    h3 {
+      color: $lightClr;
+      text-transform: capitalize;
+      background-color: $darkClr;
+      padding: 0 0.5rem;
+      text-align: center;
+    }
+  }
+
+  .our_team-items {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 75rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 3.2rem;
+    padding: 2rem;
+
+    @include mixins.breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+    }
+
+    @include mixins.breakpoint-up(xlarge) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .profile__card {
+      position: relative;
+      width: 10rem;
+      height: 10rem;
+      background: $whiteClr;
+      padding: 1rem;
+      border-radius: 50%;
+      box-shadow: $shadowOne;
+      transition: 0.6s;
+
+      &:hover {
+        border-radius: $radius;
+        height: 14rem;
+
+        .profile__card-image {
+          transform: translateY(-40px);
+        }
+
+        .profile__img {
+          border-radius: $radius;
+        }
+
+        .profile__card-data {
+          opacity: 1;
+        }
+      }
+
+      &-image {
+        position: relative;
+        width: 8rem;
+        height: 8rem;
+        transition: 0.6s;
+        z-index: 10;
+
+        .profile__img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+          transition: 0.6s;
+          box-shadow: $shadowTwo;
+        }
+      }
+
+      &-data {
+        text-align: center;
+        color: $darkClr-medium;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        transform: translateY(-30px);
+        opacity: 0;
+        transition: 0.6s;
+      }
+    }
+
+    .team__socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 1.5rem;
+      padding: 0.5rem;
+
+      .social__icon {
+        width: 25px;
+        height: 25px;
+        fill: $navLinkClr;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+          fill: darken($navLinkClr, 10%);
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

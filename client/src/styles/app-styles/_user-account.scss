@@ -1,0 +1,121 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss";
+
+.user__account {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 0 7rem 0;
+
+  @include mixins.breakpoint-up(medium) {
+    height: 90vh;
+  }
+
+  .auth__background-img {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.2;
+    }
+  }
+
+  &-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    padding: 1rem 0;
+
+    @include mixins.breakpoint-up(medium) {
+      margin: 0 auto;
+      grid-template-columns: repeat(2, 1fr);
+      padding-top: 0;
+    }
+
+    .form__user-data,
+    .form__user-password {
+      margin: 0 auto;
+      padding: 2rem;
+      max-width: 16rem;
+      height: 22rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      align-items: center;
+      border: 1px solid $whiteClr;
+      border-radius: $radius;
+      backdrop-filter: blur(10px);
+
+      @include mixins.breakpoint-up(large) {
+        row-gap: 1.5rem;
+      }
+
+      .form__title {
+        text-transform: capitalize;
+        text-align: center;
+        color: $darkClr-medium;
+      }
+      .form__field {
+        position: relative;
+        margin: 0 auto;
+        height: 50px;
+        width: 100%;
+
+        .form__input {
+          display: block;
+          margin: 0 auto;
+          width: 80%;
+          height: 2rem;
+          padding: 0 0.6rem;
+          outline: none;
+          border: 1px solid $darkClr-light;
+          font-size: $fontSm;
+          color: $darkClr-medium;
+          border-radius: 5px;
+        }
+
+        & input:focus {
+          box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #ffffff73;
+        }
+
+        & input::placeholder {
+          color: $darkClr-light;
+        }
+
+        .eye {
+          position: absolute;
+          right: 2rem;
+          transform: translateY(-1.5rem);
+          cursor: pointer;
+        }
+      }
+
+      .form__field-photo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .form__user-photo {
+          width: 3rem;
+          height: 3rem;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 1px solid $darkClr-medium;
+        }
+      }
+    }
+  }
+}

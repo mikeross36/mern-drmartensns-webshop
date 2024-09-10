@@ -1,0 +1,60 @@
+[
+  {
+    "name": "boots",
+    "coverImage": "boots.jpg",
+    "description": "Where it all began, six decades ago. We've made more boots than any other style. From our Original 1460 to sky-high 20-eye editions and hard-hitting platforms, discover the full range of DM's boots below.",
+    "footwears": [
+      "66b9ff7e6a068bb6907b9389",
+      "66b9ffbd6a068bb6907b938b",
+      "66b9ffce6a068bb6907b938d",
+      "66b9ffe36a068bb6907b938f",
+      "66b9fffa6a068bb6907b9393",
+      "66ba00076a068bb6907b9395",
+      "66ba00126a068bb6907b9397",
+      "66ba001e6a068bb6907b9399",
+      "66ba00276a068bb6907b939b",
+      "66ba004d6a068bb6907b939f",
+      "66ba00606a068bb6907b93a1",
+      "66ba006a6a068bb6907b93a3",
+      "66ba00736a068bb6907b93a5",
+      "66ba007f6a068bb6907b93a7",
+      "66ba008e6a068bb6907b93a9",
+      "66ba009b6a068bb6907b93ab",
+      "66ba00ae6a068bb6907b93af",
+      "66ba00ba6a068bb6907b93b1",
+      "66ba00c56a068bb6907b93b3",
+      "66ba00de6a068bb6907b93b7"
+    ]
+  },
+  {
+    "name": "shoes",
+    "coverImage": "shoes.jpg",
+    "description": "Docs shoes started out as a worker's shoe. And since then, Dr. Martens footwear has since been adopted, shaped and subverted by countless subcultures and individuals.",
+    "footwears": [
+      "66ba017c6a068bb6907b93c3",
+      "66ba01736a068bb6907b93c1",
+      "66ba01686a068bb6907b93bf"
+    ]
+  },
+  {
+    "name": "sandals",
+    "coverImage": "sandals.jpg",
+    "description": "Stomp your way through summer in a pair of Docs sandals. Lighter but just as tough as our shoes and boots, our sandals can take whatever the warmer seasons throw at them.",
+    "footwears": [
+      "66ba018a6a068bb6907b93c5",
+      "66ba01946a068bb6907b93c7",
+      "66ba019d6a068bb6907b93c9"
+    ]
+  },
+  {
+    "name": "platforms",
+    "coverImage": "platforms.jpg",
+    "description": "Docs have reached new heights. With towering double-height soles, our empowering platform boots and shoes are stacked high with Docs DNA. Our range includes standout leather platforms as well as 100% vegan alternatives.",
+    "footwears": [
+      "66b9ffef6a068bb6907b9391",
+      "66ba003e6a068bb6907b939d",
+      "66ba00a66a068bb6907b93ad",
+      "66ba00d06a068bb6907b93b5"
+    ]
+  }
+]

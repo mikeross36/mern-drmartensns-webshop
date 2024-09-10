@@ -1,0 +1,102 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss";
+
+.social__svgs {
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+
+  @include mixins.breakpoint-up(medium) {
+    gap: 3rem;
+    justify-content: left;
+  }
+}
+.social__svgs .icon__content {
+  position: relative;
+}
+.social__svgs .icon__content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: $lightClr;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.social__svgs .icon__content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+.social__svgs .icon__content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: $lightClr;
+  transition: all 0.3s ease-in-out;
+  box-shadow: $shadowTwo;
+}
+.social__svgs .icon__content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+.social__svgs .icon__content a svg {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+.social__svgs .icon__content a:hover {
+  color: $lightClr;
+}
+.social__svgs .icon__content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.social__svgs .icon__content a:hover .filled {
+  height: 100%;
+}
+
+.social__svgs .icon__content a[data-social="linkedin"] .filled,
+.social__svgs .icon__content a[data-social="linkedin"] ~ .tooltip {
+  background-color: #0274b3;
+}
+
+.social__svgs .icon__content a[data-social="github"] .filled,
+.social__svgs .icon__content a[data-social="github"] ~ .tooltip {
+  background-color: #24262a;
+}
+.social__svgs .icon__content a[data-social="instagram"] .filled,
+.social__svgs .icon__content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}
+.social__svgs .icon__content a[data-social="youtube"] .filled,
+.social__svgs .icon__content a[data-social="youtube"] ~ .tooltip {
+  background-color: $mainRed;
+}

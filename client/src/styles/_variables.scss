@@ -1,0 +1,49 @@
+$headerHight: 3rem;
+// COLORS
+$darkClr: #333333;
+$darkClr-medium: #484848;
+$darkClr-light: #8a8a8a8a;
+$lightClr: #f2f2f2;
+$whiteClr: #ffffff;
+$softGreenClr: #b3ffab;
+$bodyBcg: #ffffff;
+$mainRed: #be3939;
+$mainBlue: #4b9efd;
+$orangeRed: #ff4500;
+$navLinkClr: #ffa500;
+
+// SHADOWS
+$shadowOne: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+  rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+$shadowTwo: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+  rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+$shadowThree: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+  rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+  rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+$bcgBoxSh: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+  rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+  rgba(0, 0, 0, 0.09) 0px -3px 5px;
+$shadowText: 0.1rem 0.1rem 1px #333333;
+$shadowText2: 0.2rem 0.2rem 0.2rem #333333;
+
+// BORDER RADIUS
+$radius: 0.5rem;
+
+// ROTATE IMAGE
+$rotateImg: rotate(-30deg);
+// FONTS
+$fontXlg: 4rem;
+$fontLg: 3rem;
+$fontSlg: 1.5rem;
+$fontMd: 1rem; //normal-font-size: 1rem;
+$fontSm: 0.875rem; //small-font-size
+
+// MARGINS
+$mb-1: 0.5rem;
+$mb-2: 1rem;
+$mb-3: 1.5rem;
+$mb-4: 2rem;
+$mb-5: 2.5rem;
+$mb-6: 3rem;
+
+//

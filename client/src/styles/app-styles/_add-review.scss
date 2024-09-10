@@ -1,0 +1,92 @@
+@use "../variables" as *;
+@use "../mixins";
+
+.add__review {
+  margin-top: 2rem;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .review__form-bcg {
+    z-index: 3;
+    padding: 1rem;
+    width: 90%;
+    background-color: $whiteClr;
+    box-shadow: $shadowOne;
+    border-radius: $radius;
+
+    .review__form {
+      margin: 0 auto;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 1rem;
+
+      @include mixins.breakpoint-up(medium) {
+        row-gap: 1rem;
+      }
+
+      .form__field {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 1rem;
+
+        .form__label {
+          display: block;
+          font-size: $fontMd;
+          font-weight: 700;
+          text-transform: capitalize;
+          margin-bottom: $mb-1;
+        }
+
+        .text__input {
+          margin: 0 auto;
+          font-family: inherit;
+          font-size: $fontSm;
+          color: $darkClr-medium;
+          width: 95%;
+          border: 1px solid $darkClr-light;
+          transition: all 0.3s;
+          border-radius: 4px;
+          background-color: $whiteClr;
+          padding: 0.1rem 0.3rem;
+
+          &:focus {
+            outline: none;
+            border-bottom: 3px solid $darkClr-medium;
+          }
+
+          //   &:focus:invalid {
+          //     border-bottom: 3px solid $mainRed;
+          //   }
+
+          &::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: $darkClr-light;
+            opacity: 1; /* Firefox */
+          }
+
+          &:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: $darkClr-light;
+          }
+
+          &::-ms-input-placeholder {
+            /* Microsoft Edge */
+            color: $darkClr-light;
+          }
+        }
+      }
+
+      & button {
+        align-self: flex-end;
+      }
+    }
+  }
+}

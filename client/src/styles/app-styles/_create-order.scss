@@ -1,0 +1,109 @@
+@use "../variables" as *;
+@use "../mixins";
+
+.create__order {
+  &-wrapper {
+    width: 25rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 1rem;
+    color: $darkClr-medium;
+
+    .shipping__data {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 1rem;
+
+      &-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        gap: 5px;
+
+        .card__title {
+          text-transform: capitalize;
+        }
+
+        .card__data {
+          display: flex;
+          flex-direction: column;
+          justify-content: left;
+          gap: 5px;
+        }
+
+        & a {
+          color: $navLinkClr;
+          padding: 5px 0;
+          text-decoration: underline;
+          text-transform: capitalize;
+        }
+
+        .shipping__items {
+          padding: 10px 0;
+
+          .shipping__item {
+            width: 17rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            gap: 5px;
+            padding: 10px;
+            box-shadow: $shadowOne;
+            margin-bottom: $mb-1;
+            & p {
+              font-weight: 500;
+              line-height: 1.5;
+            }
+
+            & img {
+              padding: 10px 0;
+              width: 70px;
+              filter: drop-shadow(5px 10px 5px rgba(0, 0, 0, 0.5));
+            }
+          }
+        }
+      }
+    }
+
+    .summary__data {
+      &-card {
+        width: 17rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        gap: 5px;
+        box-shadow: $shadowOne;
+        padding: 16px 10px;
+
+        .card__title {
+          text-transform: capitalize;
+        }
+
+        .summary__items {
+          display: flex;
+          flex-direction: column;
+          justify-content: left;
+          gap: 10px;
+          padding: 1rem;
+
+          .summary__item {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 5px 10px 5px 0;
+            border-bottom: 1px solid $darkClr-light;
+
+            & p {
+              text-transform: capitalize;
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
+  }
+}

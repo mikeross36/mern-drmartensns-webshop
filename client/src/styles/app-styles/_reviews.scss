@@ -1,0 +1,61 @@
+@use "../variables" as *;
+@use "../mixins";
+
+.reviews {
+  margin-top: 2rem;
+  font-size: $fontSm;
+
+  &__title {
+    text-align: center;
+    padding: 1rem;
+    text-transform: capitalize;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
+  &__list {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .review__card {
+    padding: 0.5rem 1rem;
+    border-radius: $radius;
+    background-color: $whiteClr;
+    border: 1px solid $darkClr-light;
+    z-index: 3;
+
+    .review__awatar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .awatar__image {
+        width: 30px;
+        border-radius: 50% !important;
+
+        &__img {
+          width: 100%;
+          object-fit: cover;
+          border-radius: 50% !important;
+        }
+      }
+
+      .review__user {
+        font-weight: 700;
+      }
+    }
+
+    .review__content {
+      padding-top: 0.5rem;
+      font-weight: normal;
+      text-transform: none;
+      font-style: italic;
+      line-height: 1.4;
+    }
+  }
+}

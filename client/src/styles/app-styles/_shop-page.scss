@@ -1,0 +1,193 @@
+@use "../variables" as *;
+@use "../mixins";
+
+// https://visualhunt.com/search/instant/?q=dr+martens
+
+.shop {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 9rem 0 5rem 0;
+
+  @include mixins.breakpoint-up(medium) {
+    top: 0;
+    position: sticky; // 'cause parallax effect
+    height: 100vh;
+    padding: 9rem 0 0 0;
+  }
+
+  &__background-img {
+    position: absolute;
+    z-index: -1;
+    width: 110%;
+    height: 110%;
+    top: 45%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+
+    @include mixins.breakpoint-up(medium) {
+      -webkit-mask-image: url("../assets/brush5.png");
+      mask-image: url("../assets/brush5.png");
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-size: 200vh;
+      mask-size: 200vh;
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.2;
+
+      @include mixins.breakpoint-up(medium) {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .section__title {
+    margin-bottom: 0;
+    letter-spacing: 1px;
+  }
+
+  .shop__container {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    row-gap: 2.5rem;
+    column-gap: 1rem;
+    // justify-content: center;
+    justify-items: center;
+    padding: 2rem 0;
+    margin-top: $mb-4;
+    margin-bottom: $mb-4;
+
+    .shop__item {
+      justify-self: center;
+      height: 23rem;
+      width: 16rem;
+      gap: 0.1rem;
+      background-color: $whiteClr;
+      padding-bottom: 2.5rem;
+      color: $darkClr-medium;
+      border-radius: $radius;
+      box-shadow: $shadowOne;
+      transition: 0.3s;
+      z-index: 5;
+
+      .image__wrapper {
+        position: relative;
+        width: 100%;
+        height: 9rem;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(to left, #ffa500, #ff6347);
+        border-top-left-radius: $radius;
+        border-top-right-radius: $radius;
+        transition: all 0.3s ease;
+
+        &-title {
+          padding: 0 5%;
+          text-transform: uppercase;
+          font-style: italic;
+          font-weight: 700;
+          color: $bodyBcg;
+          opacity: 0.3;
+        }
+      }
+
+      &-img {
+        position: absolute;
+        top: -10%;
+        right: 3%;
+        width: 9rem;
+        transform: $rotateImg;
+        filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.2));
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        background-color: linear-gradient(to left, #ffa500, #ff6347);
+        object-fit: scale-down;
+
+        &.image-click {
+          transform: scale(1.5);
+          right: 20%;
+        }
+      }
+
+      &-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+
+        & p {
+          font-size: $fontSm;
+          text-transform: capitalize;
+        }
+
+        .shop__item-name {
+          padding: 0.3rem 7%;
+          line-height: 1.4;
+          text-align: center;
+          font-family: sans-serif;
+        }
+
+        .in-cart {
+          background: $softGreenClr;
+        }
+      }
+    }
+  }
+
+  .shop__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease;
+
+    @include mixins.breakpoint-up(medium) {
+      gap: 1rem;
+    }
+
+    .page__nav-btn {
+      background: $whiteClr;
+      border: none;
+      padding: 10px;
+      border-radius: 10px;
+      color: #292929;
+      font-weight: 700;
+      box-shadow: $shadowTwo;
+      margin: 0 10px;
+      cursor: pointer;
+      z-index: 1;
+
+      &.disabled-btn {
+        display: none;
+      }
+    }
+
+    .page__number {
+      background: $whiteClr;
+      width: 2rem;
+      height: 2rem;
+      border: none;
+      position: relative;
+      margin: 0 5px;
+      cursor: pointer;
+      box-shadow: $shadowTwo;
+
+      &.active-btn {
+        background: #315e99;
+        color: $whiteClr;
+        pointer-events: none;
+        font-weight: 700;
+      }
+
+      &.disabled-btn {
+        display: none;
+      }
+    }
+  }
+}

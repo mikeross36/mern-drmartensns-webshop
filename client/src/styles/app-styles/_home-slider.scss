@@ -1,0 +1,148 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss";
+
+.home__slider {
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  padding: 1rem 0;
+  background: linear-gradient(
+    to left,
+    rgba($navLinkClr, 0.2),
+    rgba($navLinkClr, 0.2)
+  );
+
+  @include mixins.breakpoint-up(medium) {
+    padding: 3rem 0 1rem 0;
+  }
+
+  &-wrapper {
+    position: relative;
+    padding: 1rem 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $whiteClr;
+    overflow: hidden;
+
+    @include mixins.breakpoint-up(medium) {
+      padding: 3rem 0 1rem 0;
+    }
+
+    .slides {
+      z-index: 4;
+      display: grid;
+      > .slide {
+        grid-area: 1 / -1;
+      }
+
+      > button {
+        appearance: none;
+        background: transparent;
+        border: none;
+        color: $whiteClr;
+        position: absolute;
+        font-size: 3rem;
+        width: 5rem;
+        height: 5rem;
+        bottom: 30%;
+        transition: opacity 0.3s;
+        opacity: 0.6;
+        z-index: 5;
+
+        @include mixins.breakpoint-up(medium) {
+          font-size: 5rem;
+          bottom: 40%;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &:first-child {
+          left: 80%;
+
+          @include mixins.breakpoint-up(medium) {
+            left: 90%;
+          }
+        }
+
+        &:last-child {
+          right: 80%;
+          @include mixins.breakpoint-up(medium) {
+            right: 90%;
+          }
+        }
+      }
+    }
+
+    .slide {
+      transform-style: preserve-3d;
+      // z-index: 10;
+
+      &[data-active] {
+        .slideContent > * {
+          transform: none;
+          opacity: 1;
+        }
+      }
+    }
+
+    .slideContent {
+      width: 33vw;
+      height: 45vw;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      transition: transform 0.5s ease-in-out;
+      opacity: 0.6;
+      display: grid;
+      align-content: center;
+      transform-style: preserve-3d;
+      transform: perspective(1000px) translateX(calc(100% * var(--offset)))
+        rotateY(calc(-45deg * var(--dir)));
+
+      @include mixins.breakpoint-up(medium) {
+        width: 25vw;
+        height: 34vw;
+      }
+    }
+
+    .slide[data-active] {
+      z-index: 2;
+      pointer-events: auto;
+      border: 3px solid $navLinkClr;
+
+      @include mixins.breakpoint-up(large) {
+        border: 5px solid $navLinkClr;
+      }
+
+      .slideBackground {
+        // opacity: 0.2;
+        transform: none;
+      }
+
+      .slideContentInner {
+        // opacity: 1;
+      }
+
+      // .slideContent {
+      //   --x: calc(var(--px) - 0.5);
+      //   --y: calc(var(--py) - 0.5);
+      //   opacity: 1;
+      //   transform: perspective(1000px);
+
+      //   &:hover {
+      //     transition: all 0.3s ease;
+      //     transform: perspective(1000px) rotateY(calc(var(--x) * 45deg))
+      //       rotateX(calc(var(--y) * -45deg));
+      //   }
+      // }
+    }
+  }
+}

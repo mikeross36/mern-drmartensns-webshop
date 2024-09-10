@@ -1,0 +1,211 @@
+@use "../variables.scss" as *;
+@use "../mixins";
+
+.shopping__cart {
+  position: relative;
+  height: auto;
+
+  .close__cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 111;
+    background: transparent;
+    font-weight: bold;
+    padding: 0.02rem 0.02rem;
+    border: none;
+    box-shadow: none;
+  }
+
+  .sidebar__overlay {
+    background-color: rgba($darkClr, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: end;
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    backdrop-filter: blur(5px);
+
+    &.expand {
+      transform: scale(1);
+      z-index: 110;
+    }
+
+    &.shrink {
+      transform: scaleY(0.01) scaleX(0);
+    }
+
+    .sidebar__empty {
+      margin: 0 auto;
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & h1 {
+        text-transform: uppercase;
+        color: $whiteClr;
+        text-align: center;
+      }
+    }
+
+    .sidebar {
+      overflow-y: auto;
+      position: fixed;
+      top: 8%;
+      right: 0%;
+      height: 100vh;
+      width: 18rem;
+      padding: 1rem;
+      box-shadow: $shadowThree;
+      background-color: $whiteClr;
+
+      @include mixins.breakpoint-up(medium) {
+        width: 46rem;
+        height: auto;
+        right: 1%;
+      }
+
+      @include mixins.breakpoint-up(large) {
+        width: 55rem;
+      }
+
+      .sidebar__title {
+        margin: 0 auto;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 0.3rem 1rem;
+
+        @include mixins.breakpoint-up(medium) {
+          width: 17rem;
+        }
+      }
+
+      &__footer {
+        padding: 1rem;
+        text-align: center;
+        height: auto;
+
+        @include mixins.breakpoint-up(medium) {
+          text-align: right;
+        }
+
+        .cart__total {
+          color: $darkClr-medium;
+          text-transform: capitalize;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 2rem;
+          margin-top: $mb-1;
+          padding-bottom: $mb-1;
+          font-weight: bold;
+
+          @include mixins.breakpoint-up(medium) {
+            flex-direction: row;
+            justify-content: flex-end;
+          }
+
+          & h4 {
+            border-bottom: 1px solid $darkClr-medium;
+          }
+
+          .button--purchase {
+            background: $mainBlue;
+            font-size: $fontSm;
+            text-transform: capitalize;
+          }
+        }
+      }
+
+      .cart__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        gap: 0.5rem;
+        margin: $mb-1 0;
+        padding: 1rem;
+        box-shadow: $shadowThree;
+        font-size: $fontSm;
+        color: $darkClr-medium;
+
+        @include mixins.breakpoint-up(medium) {
+          flex-direction: row;
+          align-items: center;
+          gap: 2rem;
+          padding: 1rem;
+          color: inherit;
+        }
+
+        & h4 {
+          display: block;
+          padding-left: 5px;
+          width: 20%;
+          height: 30%;
+          color: $darkClr-medium;
+          background-color: $softGreenClr;
+
+          @include mixins.breakpoint-up(medium) {
+            width: 10%;
+          }
+        }
+
+        & img {
+          width: 70px;
+
+          @include mixins.breakpoint-up(medium) {
+            width: 60px;
+          }
+        }
+
+        &-name {
+          font-weight: 600;
+          line-height: 1.5;
+        }
+
+        &-category {
+          font-weight: normal;
+          text-transform: capitalize;
+          line-height: 1.5;
+        }
+
+        .cart__item-quantity-btns {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          .quantity__button {
+            background: transparent;
+            box-shadow: none;
+            color: $darkClr-medium;
+
+            &:disabled {
+              color: $darkClr-light;
+            }
+          }
+
+          .cart__item-quantity {
+            font-size: $fontMd;
+            font-weight: 700;
+          }
+        }
+
+        &-remove {
+          background: none;
+          box-shadow: none;
+          font-size: 1.2rem;
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}

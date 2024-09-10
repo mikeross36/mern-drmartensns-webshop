@@ -1,0 +1,9 @@
+@use "../variables" as *;
+@use "../mixins";
+
+.paralax {
+  height: 200vh;
+  width: auto;
+  position: relative;
+  overflow: hidden;
+}

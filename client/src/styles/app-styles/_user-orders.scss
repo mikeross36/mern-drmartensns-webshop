@@ -1,0 +1,59 @@
+@use "../variables" as *;
+@use "../mixins";
+
+.user__orders {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .page__background-img {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.2;
+    }
+  }
+
+  &-list {
+    width: 100%;
+    max-width: 64rem;
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1rem;
+    justify-items: center;
+
+    .order__item {
+      width: 17rem;
+      background: $whiteClr;
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      box-shadow: $shadowOne;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: $mb-1;
+      padding: 1rem;
+      box-shadow: $shadowOne;
+      font-size: $fontSm;
+      color: $darkClr-medium;
+
+      & p {
+        text-transform: capitalize;
+      }
+    }
+  }
+}

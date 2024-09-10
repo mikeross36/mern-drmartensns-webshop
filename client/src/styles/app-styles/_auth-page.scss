@@ -1,0 +1,162 @@
+@use "../variables" as *;
+@use "../mixins";
+
+// https://wweb.dev/resources/css-separator-generator
+
+.auth__page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 5rem;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 9rem;
+    z-index: 0;
+    transform: skewY(5deg);
+    transform-origin: top right;
+    background: $navLinkClr;
+    opacity: 0.5;
+
+    @include mixins.breakpoint-down(medium) {
+      height: 4rem;
+    }
+  }
+
+  .auth__background-img {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.2;
+    }
+  }
+
+  &-container {
+    .auth__page-content {
+      width: 18rem;
+      min-height: 25rem;
+      overflow: hidden;
+      z-index: 10;
+      padding: 2rem 1.5rem;
+
+      @include mixins.breakpoint-up(medium) {
+        max-width: 20rem;
+        margin-right: 0;
+      }
+
+      .auth__form {
+        margin: 0 auto;
+        position: relative;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+        backdrop-filter: blur(10px);
+        border: 1px solid $whiteClr;
+        border-radius: $radius;
+        padding: 2rem 1rem;
+
+        .form__field {
+          position: relative;
+          margin: 0 auto;
+          height: 80px;
+          width: 100%;
+
+          .form__input {
+            display: block;
+            margin: 0 auto;
+            width: 90%;
+            height: 3rem;
+            padding: 0 0.6rem;
+            outline: none;
+            border: 1px solid $darkClr-light;
+            font-size: $fontSm;
+            color: $darkClr;
+
+            border-radius: 5px;
+          }
+
+          & input:focus {
+            box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #ffffff73;
+          }
+
+          & input::placeholder {
+            color: $darkClr-light;
+          }
+
+          .eye {
+            position: absolute;
+            right: 1rem;
+            transform: translateY(-2rem);
+            cursor: pointer;
+          }
+        }
+
+        .login,
+        .sign__up {
+          font-size: $fontMd;
+          font-weight: 500;
+          color: $darkClr-medium;
+          text-align: center;
+
+          & a {
+            color: $darkClr-medium;
+            text-decoration: none;
+            margin-left: 0.5rem;
+            text-transform: capitalize;
+
+            &:hover {
+              text-decoration: underline;
+              color: $mainBlue;
+            }
+          }
+        }
+
+        .login {
+          margin: 1rem 0 !important;
+        }
+
+        .forgot__pass {
+          margin-top: 1rem;
+          & a {
+            font-size: $fontMd;
+            font-weight: 500;
+            color: $darkClr-medium;
+            text-decoration: none;
+            text-transform: capitalize;
+
+            &:hover {
+              text-decoration: underline;
+              color: $mainBlue;
+            }
+          }
+        }
+
+        .auth__form-btn {
+          margin-top: 1.5rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@use "../variables" as *;
+@use "../mixins";
+
+.button {
+  box-sizing: border-box;
+  width: 9em;
+  height: 2.4em;
+  font-size: $fontSlg;
+  color: $whiteClr;
+  text-transform: capitalize;
+  text-shadow: $shadowText;
+  border-radius: 0.5em;
+  margin: 1rem 0;
+  box-shadow: $shadowOne;
+  transition: 0.3s;
+  cursor: pointer;
+  background: linear-gradient(to left, #ffa500, #ff6347);
+  text-align: center;
+  transform: perspective(600px) rotateY(-35deg);
+
+  &:hover {
+    transform: perspective(300px) rotateY(-40deg);
+    padding-left: 5%;
+  }
+}
+
+.button-light {
+  width: 8em;
+  height: 2em;
+  font-size: $fontSm;
+  font-weight: 600;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+  color: $whiteClr;
+  text-transform: capitalize;
+  text-shadow: $shadowText;
+  transition: 0.3s;
+  cursor: pointer;
+  background: linear-gradient(to left, #ffa500, #ff6347);
+  padding: 0 0.5rem;
+  transform: perspective(600px) rotateY(-35deg);
+
+  &:hover {
+    transform: perspective(200px) rotateY(-40deg);
+    padding-right: 5px;
+  }
+}
+
+.button-details {
+  width: auto;
+  height: auto;
+  font-size: $fontSm;
+  font-weight: 600;
+  color: $whiteClr;
+  text-shadow: $shadowText;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+  text-transform: capitalize;
+  transition: 0.3s;
+  cursor: pointer;
+  background: $mainBlue;
+  padding: 0.5rem 1rem;
+  transform: perspective(600px) rotateY(-35deg);
+
+  &:hover {
+    background: darken($mainBlue, 20%);
+  }
+}
+
+.button-red {
+  width: 8em;
+  height: 2em;
+  font-size: $fontSm;
+  font-weight: 600;
+  color: $whiteClr;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+  text-transform: capitalize;
+  transition: 0.3s;
+  cursor: pointer;
+  background: $mainRed;
+  padding: 0 0.5rem;
+  transform: perspective(600px) rotateY(-35deg);
+
+  &:hover {
+    background: darken($mainRed, 10%);
+  }
+}
