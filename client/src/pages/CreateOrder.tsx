@@ -47,7 +47,7 @@ export default function CreateOrder() {
         totalPrice: Number(totalPrice.toFixed(2)),
       });
       dispatch(clearShoppingCartAction() as unknown as ShoppingCartActionType);
-      console.log(data);
+      // console.log(data);
       navigate(`${ERoutes.order}/${data.order._id}`) as unknown as OrderType;
     } catch (err) {
       if (err instanceof Error) {

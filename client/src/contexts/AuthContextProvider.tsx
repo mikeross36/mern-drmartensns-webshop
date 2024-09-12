@@ -1,6 +1,6 @@
-import { createContext, useReducer, useMemo, useCallback } from "react";
+import { createContext, useReducer, useMemo } from "react";
 import { UserType } from "../types/users";
-import { useLocalStorage } from "../hooks";
+// import { useLocalStorage } from "../hooks";
 
 type StateType = {
   authUser: UserType | null;
@@ -35,28 +35,28 @@ const authReducer = (state: StateType, action: ActionType): StateType => {
   }
 };
 
-const usePersistedReducer = () => {
-  const [savedState, setSavedState] = useLocalStorage<StateType>(
-    "authUser",
-    initialState
-  );
-  const reducerLocalStorage = useCallback(
-    (state: StateType, action: ActionType): StateType => {
-      const newState = authReducer(state, action);
-      setSavedState(newState);
-      return newState;
-    },
-    [setSavedState]
-  );
-  return useReducer(reducerLocalStorage, savedState);
-};
+// const usePersistedReducer = () => {
+//   const [savedState, setSavedState] = useLocalStorage<StateType>(
+//     "authUser",
+//     initialState
+//   );
+//   const reducerLocalStorage = useCallback(
+//     (state: StateType, action: ActionType): StateType => {
+//       const newState = authReducer(state, action);
+//       setSavedState(newState);
+//       return newState;
+//     },
+//     [setSavedState]
+//   );
+//   return useReducer(reducerLocalStorage, savedState);
+// };
 
 export const AuthContextProvider = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  const [state, dispatch] = usePersistedReducer();
+  const [state, dispatch] = useReducer(authReducer, initialState);
   const value = useMemo(() => {
     return {
       state,
